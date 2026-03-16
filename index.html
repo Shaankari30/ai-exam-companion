@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Exam Companion</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+  <div id="app">
+
+    <div id="header">
+      <h1>AI Exam Companion</h1>
+      <p>From failing to exam-ready — AI that learns you</p>
+      <button id="demo-btn">Run Jake's Demo</button>
+    </div>
+
+    <div id="main">
+
+      <div id="left-panel">
+        <div id="upload-box">
+          <p>Upload your syllabus PDF</p>
+          <input type="file" id="pdf-upload" accept=".pdf">
+          <br><br>
+          <label>Exam date:</label>
+          <input type="date" id="exam-date">
+          <br><br>
+          <button id="analyse-btn">Analyse Syllabus</button>
+        </div>
+
+        <div id="predictor-box">
+          <h3>Exam Predictor</h3>
+          <div id="prediction-result">Complete 10 questions to see your predicted score.</div>
+        </div>
+
+        <div id="planner-box">
+          <h3>Study Plan</h3>
+          <div id="plan-result">Upload your syllabus to generate your plan.</div>
+        </div>
+      </div>
+
+      <div id="center-panel">
+        <h3>Knowledge Map</h3>
+        <div id="graph-container"></div>
+      </div>
+
+      <div id="right-panel">
+        <h3>Quiz</h3>
+        <div id="quiz-box">
+          <div id="question-text">Your quiz questions will appear here.</div>
+          <textarea id="answer-input" placeholder="Type your answer here..."></textarea>
+          <div id="voice-row">
+            <button id="mic-btn">🎤 Speak Answer</button>
+            <button id="submit-btn">Submit Answer</button>
+          </div>
+          <div id="feedback-box"></div>
+        </div>
+        <div id="report-row">
+          <button id="export-btn">Export Study Report</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="config.js"></script>
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
